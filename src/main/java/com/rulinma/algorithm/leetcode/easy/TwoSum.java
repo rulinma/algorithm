@@ -1,4 +1,4 @@
-package com.rulinma.algorithm.leetcode;
+package com.rulinma.algorithm.leetcode.easy;
 
 import org.junit.Test;
 
