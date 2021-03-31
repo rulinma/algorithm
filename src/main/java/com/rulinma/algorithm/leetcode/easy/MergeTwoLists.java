@@ -17,26 +17,29 @@ public class MergeTwoLists {
         ListNode t1 = l1;
         ListNode t2 = l2;
         while (t1 != null && t2 != null) {
-            if (t1.val <= t2.val) {
-                if (head == null) {
-                    head = new ListNode(t1.val);
+            // 设置head
+            if (head == null) {
+                if (t1.val <= t2.val) {
+                    head = t1;
                     current = head;
+                    t1 = t1.next;
                 } else {
-                    current.next = new ListNode(t1.val);
-                    current = current.next;
+                    head = t2;
+                    t2 = t2.next;
+                    current = head;
                 }
-                t1 = t1.next;
             } else {
-                if (head == null) {
-                    head = new ListNode(t2.val);
-                    current = head;
-                } else {
-                    current.next = new ListNode(t2.val);
+                // 其他设置
+                if (t1.val <= t2.val) {
+                    current.next = t1;
                     current = current.next;
+                    t1 = t1.next;
+                } else {
+                    current.next = t2;
+                    current = current.next;
+                    t2 = t2.next;
                 }
-                t2 = t2.next;
             }
-
         }
 
         //
