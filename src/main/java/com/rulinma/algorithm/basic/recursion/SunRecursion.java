@@ -14,12 +14,12 @@ public class SunRecursion {
     public int sum(int x) {
         String depthString = generateDepthString(depth++);
         if (x == 0) {
-            System.out.println("r" + depthString + x);
+            System.out.println("r" + depthString + "value: " + x + " result:" + 0);
             return 0;
         }
         System.out.println("s" + depthString + x);
-        int result= sum(x - 1) + x;
-        System.out.println("r" + depthString + x);
+        int result = sum(x - 1) + x;
+        System.out.println("r" + depthString + "value: " + x + " result:" + result);
         return result;
     }
 
